@@ -1,122 +1,143 @@
 /*General Styles*/
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
+html,
+body {
+  margin: 0;
 }
 
 :root {
-    --primary-color: #111D4A;
-    --secondary-color: #05CBE9;
+  --primary-color: #111d4a;
+  --secondary-color: #05cbe9;
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: lightblue;
-    font-size: 1rem;
+  align-items: center;
+  background-color: lightblue;
+  color: white;
+  display: flex;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 /*Layout*/
-
 .container {
-  width: 90%;
-  max-width: 800px;
   margin: 0 auto;
+  max-width: 800px;
+  width: 90%;
 }
 
 .card {
-    background-color: var(--primary-color);
-    display: flex;
-    flex-direction: column;
+  background-color: var(--primary-color);
+  display: grid;
+  grid-template: 200px 1em 100px 100px auto 1em / 1em 100px auto 1em;
 }
 
 .card-img {
-    width: 100%;
-    flex-basis: 300px;
-    object-fit: cover;
-    min-height: 0;
-    min-width: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
 }
 
-.card-body {
-    font-family: 'Source Sans Pro', sans-serif;
-    padding: 1.15em;
-}
 
 .card-title,
 .btn {
-    font-family: 'Blinker', sans-serif;
+  font-family: "Blinker", sans-serif;
 }
 
 .card-title {
-    font-size: 1.75rem;
-    margin-top: 0;
-    color: var(--secondary-color);
+  color: var(--secondary-color);
+  font-size: 1.75rem;
+  margin-top: 0;
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
 }
 
-.card-description{
-    line-height: 1.7em;
+.card-description {
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.7em;
+  grid-column: 2 / 4;
+  grid-row: 4 / 5;
 }
 
 .readmore,
 .card-description {
-    opacity: 0.6;
-}
-
-
-.card-footer {
-    margin-top: 2.5em;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+  opacity: 0.6;
 }
 
 .readmore {
-    font-size: 1.25rem;
-    flex-basis: 50px;
+  font-size: 1.25rem;
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+  align-self: end;
 }
 
 span {
-    font-weight: 700;
-    font-size: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .btn {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 0.75em;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: lowercase;
-    font-size: 1.25rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.75em;
+  text-transform: lowercase;
+  grid-column: 3 / 4;
+  grid-row: 5 / 6;
+  justify-self: end;
+  align-self: end;
 }
 
 @media screen and (min-width: 600px) {
-    body {
-        font-size: 1.125rem;
-    }
+  
+  body {
+    font-size: 1.125rem;
+  }
 
-    .card {
-        flex-direction: row;
-    }
+  .card {
+    grid-template: 1em auto 100px auto 1em / 200px 1em 75px auto 1em; 
+  }
 
-    .card-title {
-        font-size: 2.25rem;
-    }
+  .card-img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 6;
+  }
 
+  .card-title {
+    font-size: 2.25rem;
+    grid-column: 3 / 5;
+    grid-row: 2 / 3;
+  }
+
+  .card-description {
+    grid-column: 3 / 5;
+    grid-row: 3 / 4;
+  }
+
+  .readmore {
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+  }
+
+  .btn {
+     grid-column: 4 / 5;
+     grid-row: 4 / 5;
+  }
 }
